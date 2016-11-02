@@ -1,11 +1,9 @@
 # Дан целочисленный массив. Необходимо вывести вначале
 #    его элементы с четными индексами, а затем - с нечетными
 
-array = [ 1, 2, 3, 4, 5 ]
+array = [ 0, 0, 0, 0, 0, 0, 0]
 
-array.each do |x|
-  puts "#{x} is even" if x.even?
-end
+array.each_with_index { |item, index|  puts "#{item} is even" if index.even? }
 
 array.each do |x|
   puts "#{x} is odd" if x.odd?

@@ -6,7 +6,4 @@ base = (3..10).to_a
 base.pop
 base.shift
 
-array = base
-
-array_count = array.count
-p "Array: #{array}. Count of elements in array: #{array_count}."
+p "Array: #{base}. Count of elements in array: #{base.count}."

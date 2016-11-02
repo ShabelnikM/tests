@@ -4,4 +4,7 @@
 array = [ 1, 2, 3, 4, 5 ]
 K = 2
 
-p array.min < K ? "true" : "false"
+p array.min < K
+p !array.detect{ |item| item < K }.nil?
+p !array.find{ |item| item < K }.nil?
+p array.any?{ |item| item < K }
