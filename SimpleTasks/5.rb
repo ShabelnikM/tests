@@ -2,5 +2,5 @@
 
 array = [ 1, 2, 3, 4, 5 ]
 
-even = array.count {|x| x.even? }
-p "Count of even numbers in array: #{even}"
+odd = array.count {|x| x.odd? }
+p "Count of even numbers in array: #{odd}"
