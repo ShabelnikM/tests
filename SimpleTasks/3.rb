@@ -5,3 +5,5 @@ array = [ 1, 2, 3, 4, 5 ]
 K = 3
 
 puts array.map {|x| x**K}
+
+# what? 
