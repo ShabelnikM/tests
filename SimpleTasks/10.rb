@@ -4,6 +4,7 @@
 
 array = [7, 2, 3, 4, 1, 3, 10]
 
+# FixME: Переделать. Each + case излишество. Решение имеет одну строку
 array.each do |item|
   case
   when item > array[0] && item < array[-1]
