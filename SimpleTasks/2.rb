@@ -3,7 +3,14 @@
 
 array = [ 1, 3, 2, 5, 4 ]
 index_min = array.find_index(array.min)
-# index_max = array.max
-# array(a..b).reverse
+index_max = array.find_index(array.max)
 
-# Not finished yet
+new_array = array[index_min..index_max]
+new_array.pop
+new_array.shift
+new_array.reverse!
+
+start_index = [index_min, index_max].min + 1
+array[start_index, new_array.length] = new_array
+
+p array
