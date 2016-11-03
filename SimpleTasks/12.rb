@@ -5,4 +5,4 @@
 statute = [175 , 183, 168]
 last_name = ["First", "Second", "Tramp"]
 
-p "#{last_name[ statute.find_index(statute.max) ]} is highest"
+p "#{last_name[ statute.index(statute.max) ]} is highest"
