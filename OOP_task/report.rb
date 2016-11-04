@@ -8,6 +8,7 @@ hourly = HourlyPaidProger.fill_random
 people = mounthly + hourly
 people.each(&:salary)
 people.sort_by!(&:avg_salary).reverse!
-p people.map { |item| item.name && item.avg_salary }
 
-p people[0..4].name
+p people.map { |item| { fio: "#{item.last_name} #{item.name}",  salary: item.avg_salary} }
+
+people[0..4]
