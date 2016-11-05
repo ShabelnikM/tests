@@ -11,10 +11,11 @@ class Employer
   end
 
   def self.read_from_file
-
+    File.open( "people.txt", 'r' ) { |f| f.readlines }
   end
 
-  def self.write_to_file(employers)
+  def self.write_to_file
+    File.open( "people.txt", 'w+' ) { |f| f <<  }
   end
 
   def salary
