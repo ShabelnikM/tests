@@ -18,5 +18,5 @@ sorted_last_name = people.map { |item| { last_name: item.last_name } }
 p sorted_last_name.last(3)
 
 # File.open( "people.txt", 'w+' ) { |f| f << people }
-Employer.write_to_file
+Employer.write_to_file(people)
 p Employer.read_from_file

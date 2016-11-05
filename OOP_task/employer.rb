@@ -15,7 +15,7 @@ class Employer
   end
 
   def self.write_to_file( data=[] )
-    File.open( FILENAME, 'w+' ) { |file| data.each { |item| file.write(item) } }
+    File.open( FILENAME, 'w+' ) { |file| data.each { |item| file.write(item.inspect) } }
   end
 
   def salary
