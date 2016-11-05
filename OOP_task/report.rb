@@ -11,4 +11,9 @@ people.sort_by!(&:avg_salary).reverse!
 
 p people.map { |item| { fio: "#{item.last_name} #{item.name}",  salary: item.avg_salary} }
 
-people[0..4]
+sorted_name = people.map { |item| { name: item.name } }
+p sorted_name.first(5)
+
+sorted_last_name = people.map { |item| { last_name: item.last_name } }
+p sorted_last_name.last(3)
+
