@@ -1,5 +1,5 @@
 class Employer
-
+  FILENAME = "people.txt"
   attr_reader :id, :avg_salary
   attr_accessor :name, :last_name, :paid
 
@@ -11,14 +11,15 @@ class Employer
   end
 
   def self.read_from_file
-    File.open( "people.txt", 'r' ) { |file| file.readlines }
+    File.open( FILENAME, 'r' ) { |file| file.readlines }
   end
 
   def self.write_to_file( data=[] )
-    File.open( "people.txt", 'w+' ) { |file| data.each { |item| file.write(item)} }
+    File.open( FILENAME, 'w+' ) { |file| data.each { |item| file.write(item) } }
   end
 
   def salary
+    raise NotImplementedError, 'Have to be overwritten.'
   end
 
   def self.fill_random(count = 10)
