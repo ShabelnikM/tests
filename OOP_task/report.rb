@@ -1,6 +1,7 @@
 require './employer.rb'
 require './monthly_paid_proger.rb'
 require './hourly_paid_proger.rb'
+require './file_worker.rb'
 
 mounthly = MonthlyPaidProger.fill_random
 hourly = HourlyPaidProger.fill_random
@@ -18,5 +19,5 @@ sorted_last_name = people.map { |item| { last_name: item.last_name } }
 p sorted_last_name.last(3)
 
 # File.open( "people.txt", 'w+' ) { |f| f << people }
-Employer.write_to_file(people)
-p Employer.read_from_file
+FileWorker.write_to_file(people)
+p FileWorker.read_from_file
