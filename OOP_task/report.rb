@@ -18,6 +18,5 @@ p sorted_name.first(5)
 sorted_last_name = people.map { |item| { last_name: item.last_name } }
 p sorted_last_name.last(3)
 
-# File.open( "people.txt", 'w+' ) { |f| f << people }
 FileWorker.write_to_file(people)
 p FileWorker.read_from_file
