@@ -3,7 +3,11 @@ class FileWorker
   FILENAME = "people.txt"
 
   def self.read_from_file
-    File.open( FILENAME, 'r' ) { |file| file.readlines }
+    begin
+      File.open( FILENAME, 'r' ) { |file| file.readlines }
+    rescue
+      p "#{FILENAME} does not exist or have uncorrect file format."
+    end
   end
 
   def self.write_to_file( data=[] )
