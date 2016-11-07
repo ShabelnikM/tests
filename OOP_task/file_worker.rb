@@ -1,17 +1,25 @@
+require 'csv'
+
 class FileWorker
 
-  FILENAME = "people.txt"
+  FILENAME = "people.csv"
 
   def self.read_from_file
-    begin
-      File.open( FILENAME, 'r' ) { |file| file.readlines }
-    rescue
-      p "#{FILENAME} does not exist or have uncorrect file format."
+    CSV.foreach(FILENAME) do |row|
+      p row
     end
+  rescue
+      p "#{FILENAME} does not exist or have uncorrect file format."
   end
 
   def self.write_to_file( data=[] )
-    File.open( FILENAME, 'w+' ) { |file| data.each { |item| file.write(item.inspect) } }
+    CSV.open( FILENAME, 'wb' ) do |csv|
+      csv << ['FIO', 'AVG Salary']
+      data.each do |employer|
+        csv << ["#{employer.name} #{employer.last_name}"]
+        csv << ["#{employer.avg_salary}"]
+      end
+    end
   end
 
 end

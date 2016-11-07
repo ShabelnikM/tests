@@ -1,6 +1,6 @@
 class Employer
 
-  attr_reader :id, :avg_salary
+  attr_reader :avg_salary
   attr_accessor :name, :last_name, :paid
 
   def initialize( employe={} )
@@ -25,7 +25,6 @@ class Employer
   def self.random_string
     (0...50).map { ('a'..'z').to_a[rand(26)] }.join
   end
-  # Employer.write_to_file([Employer.new, Employer.new])
 
 end
 
