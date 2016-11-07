@@ -16,8 +16,7 @@ class FileWorker
     CSV.open( FILENAME, 'wb' ) do |csv|
       csv << ['FIO', 'AVG Salary']
       data.each do |employer|
-        csv << ["#{employer.name} #{employer.last_name}"]
-        csv << ["#{employer.avg_salary}"]
+        csv << ["#{employer.name} #{employer.last_name}", employer.avg_salary]
       end
     end
   rescue
