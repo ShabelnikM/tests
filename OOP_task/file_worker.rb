@@ -20,6 +20,8 @@ class FileWorker
         csv << ["#{employer.avg_salary}"]
       end
     end
+  rescue
+    p "#{FILENAME} does not exist or have uncorrect file format."
   end
 
 end
