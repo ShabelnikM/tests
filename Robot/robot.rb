@@ -16,19 +16,11 @@ class Robot
   end
 
   def left
-    if @direction == 'NORTH'
-      @direction = 'WEST'
-    else
-      @direction = DIRECTION[DIRECTION.index(@direction) - 1]
-    end
+    @direction = DIRECTION[DIRECTION.index(@direction) - 1]
   end
 
   def right
-    if @direction == 'WEST'
-      @direction = 'NORTH'
-    else
-      @direction = DIRECTION[DIRECTION.index(@direction) + 1]
-    end
+    @direction = DIRECTION[DIRECTION.index(@direction) + 1] || 'NORTH'
   end
 
   def report
