@@ -1,18 +1,34 @@
 class Robot
-  attr_accessor :position_x, :position_y, :direction
   DIRECTION = %w[NORTH EAST SOUTH WEST]
 
   def place(x, y, f)
-    @position_x = x
-    @position_y = y
+    @row = x
+    @col = y
     if DIRECTION.include? f
       @direction = f
     else
-      p 'Direction error. Must be only: ' + DIRECTION
+      p "Direction error. Must be only: #{DIRECTION}"
     end
   end
 
   def move
+    step = feature_move
+    @col = step[:y]
+    @row = step[:x]
+  end
+
+  def feature_move
+    maybe_step = {x: @col, y: @row}
+    if @direction == 'NORTH'
+      maybe_step[:y] = @col + 1
+    elsif @direction == 'EAST'
+      maybe_step[:x] = @row + 1
+    elsif @direction == 'SOUTH'
+      maybe_step[:y] = @col - 1
+    elsif @direction == 'WEST'
+      maybe_step[:x] = @row - 1
+    end
+    maybe_step
   end
 
   def left
@@ -24,16 +40,6 @@ class Robot
   end
 
   def report
-    p "Position x:#{@position_x}, y:#{@position_y}, direction: #{@direction}"
+    {x: @row, y: @col, f: @direction}
   end
 end
-
-robot = Robot.new
-robot.place(1, 2, 'WEST')
-robot.report
-robot.left
-robot.report
-robot.left
-robot.report
-robot.right
-robot.report
